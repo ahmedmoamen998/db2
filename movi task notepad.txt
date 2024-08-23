@@ -1,0 +1,55 @@
+CREATE SCHEMA movi
+GO
+
+CREATE TABLE movi.actor (
+	actor_id INT PRIMARY KEY,
+	actfirst_name char(50),
+	actlast_name char(50),
+	act_gendr char(1)
+)	
+CREATE TABLE movi.director (
+	director_id INT PRIMARY KEY,
+	directorfirst_name char(50),
+	directorlast_name char(50),
+	
+)
+CREATE TABLE movi.movi_direction (
+	di_id INT ,
+	movi_id int 
+)
+CREATE TABLE movi.movi_cast (
+	actor_id INT ,
+	movi_id int,
+	--what is mean of it 
+	-- you say that we cant alter tables in our data base what about relation can we alter it 
+	role char(50),
+	
+)	
+CREATE TABLE movi.movie (
+	movi_id int PRIMARY KEY,
+	movi_title  char(50),
+	movi_year int,
+	movi_time int ,
+	movi_lang  char(50),
+	movi_dt_rel date,
+	mov_rel_country char(50)
+
+)	
+CREATE TABLE movi.reviewer (
+	rev_id INT PRIMARY KEY,
+	rev_name char(30),
+	actlast_name char(50),
+
+)	
+CREATE TABLE movi.genres (
+	gen_id INT PRIMARY KEY,
+	gen_title char(30)
+	
+)	
+CREATE TABLE movi.rating (
+	movi_id int ,
+	rev_id INT ,
+	rev_stars int , 
+	num_o_ratings int 
+	
+)	
